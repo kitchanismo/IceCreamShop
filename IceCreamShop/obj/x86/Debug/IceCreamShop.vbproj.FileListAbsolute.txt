@@ -1,0 +1,14 @@
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\bin\Debug\IceCreamShop.exe
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\bin\Debug\IceCreamShop.pdb
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\bin\Debug\IceCreamShop.xml
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.Resources.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.vbproj.GenerateResource.Cache
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.exe
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.xml
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.pdb
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.frmMain.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.frmPOS.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.frmOrdering.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.frmInventory.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\obj\x86\Debug\IceCreamShop.frmLogin.resources
+C:\Users\Betsayda\Desktop\IceCreamShop\IceCreamShop\bin\Debug\IceCreamShop.exe.config
