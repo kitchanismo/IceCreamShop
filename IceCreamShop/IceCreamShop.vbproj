@@ -50,6 +50,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="kitchanRandomStuff, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\kitchanRandomStuff.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -80,16 +84,16 @@
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSalesReport.Designer.vb">
+      <DependentUpon>frmSalesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPOS.Designer.vb">
       <DependentUpon>frmPOS.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPOS.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOrdering.Designer.vb">
-      <DependentUpon>frmOrdering.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmOrdering.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInventory.Designer.vb">
@@ -105,9 +109,10 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modconn.vb" />
-    <Compile Include="modglobal.vb" />
-    <Compile Include="modquery.vb" />
+    <Compile Include="modConn.vb" />
+    <Compile Include="modGlobal.vb" />
+    <Compile Include="modQuery.vb" />
+    <Compile Include="modStock.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,16 +128,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SalesModule.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPOS.resx">
       <DependentUpon>frmPOS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOrdering.resx">
-      <DependentUpon>frmOrdering.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventory.resx">
       <DependentUpon>frmInventory.vb</DependentUpon>
@@ -158,6 +164,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\kitchanRandomStuff.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

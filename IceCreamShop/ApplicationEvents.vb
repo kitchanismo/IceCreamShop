@@ -7,9 +7,15 @@
     ' StartupNextInstance: Raised when launching a single-instance application and the application is already active. 
     ' NetworkAvailabilityChanged: Raised when the network connection is connected or disconnected.
     Partial Friend Class MyApplication
-
+        Private WithEvents DLLDomain As AppDomain = AppDomain.CurrentDomain
+        Private Function DLL_AssemblyResolve(ByVal sender As Object, ByVal args As System.ResolveEventArgs) As System.Reflection.Assembly Handles DLLDomain.AssemblyResolve
+            If args.Name.Contains("kitchanRandomStuff") Then
+                Return System.Reflection.Assembly.Load(My.Resources.kitchanRandomStuff)
+            Else
+            End If
+            Return Nothing
+        End Function
     End Class
-
 
 End Namespace
 

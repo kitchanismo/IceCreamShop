@@ -1,6 +1,10 @@
 ﻿'Imports System.Data.SqlClient
 
 Module modconn
+    Public sql As String
+    Public conn As New System.Data.OleDb.OleDbConnection
+    Public cmd As System.Data.OleDb.OleDbCommand
+    Public dr As System.Data.OleDb.OleDbDataReader
     'database
     Public Sub Connected()
         With conn

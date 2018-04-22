@@ -6,22 +6,26 @@
 
     Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
         If IsUserAuthentic(cbopos.Text.ToLower, tbpcode.Text.ToLower) = True Then
-            MsgBox("Successfully login", MsgBoxStyle.Information)
             frmMain.Show()
             If cbopos.Text = "Employee" Then
 
                 frmMain.InventoryToolStripMenuItem.Visible = False
                 frmMain.POSToolStripMenuItem.Visible = False
                 frmMain.ReportsToolStripMenuItem.Visible = False
+                frmMain.btninventory.Visible = False
+                frmMain.btnreport.Visible = False
             Else
                 frmMain.InventoryToolStripMenuItem.Visible = True
                 frmMain.POSToolStripMenuItem.Visible = True
                 frmMain.ReportsToolStripMenuItem.Visible = True
-
+                frmMain.btninventory.Visible = True
+                frmMain.btnreport.Visible = True
             End If
-            Me.Hide()
-            cbopos.Text = "Select"
+            frmMain.lblUser.Text = cbopos.Text
+            cbopos.Text = "- Select -"
             tbpcode.Text = ""
+            MsgBox("Welcome!", MsgBoxStyle.Information)
+            Me.Hide()
         Else
             MsgBox("Incorrect passcode", MsgBoxStyle.Critical)
         End If
@@ -40,7 +44,7 @@
         End If
     End Function
 
-    Private Sub btncancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancel.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         End
     End Sub
 End Class

@@ -1,10 +1,10 @@
 ﻿Module modquery
 
-    Public Sub PopulateProducts(ByVal lv As ListView)
+    Public Sub PopulateProducts(ByVal lv As ListView, ByVal orderBy As String)
         Connected()
         With lv
             .Items.Clear()
-            sql = " SELECT * FROM tblproducts"
+            sql = " SELECT * FROM tblproducts order by " & orderBy.ToLower & ""
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
@@ -17,6 +17,7 @@
                     .SubItems.Add(dr("prod_purchasedate"))
                     .SubItems.Add(dr("prod_passdate"))
                 End With
+
             End While
         End With
     End Sub
@@ -53,29 +54,7 @@
         End While
     End Function
 
-    Public Sub PopulateComputedSales(ByVal lv As ListView, ByVal fromdate As Date, ByVal todate As Date)
-        Connected()
-        With lv
-            .Items.Clear()
-            sql = " SELECT * FROM tblsales where date_order >  # " & fromdate & " #   AND date_order < # " & todate & " #  order by ORno"
-            CommandDB()
-            dr = cmd.ExecuteReader()
-            lv.Items.Clear()
-            While (dr.Read())
-                With lv.Items.Add(dr("id"))
-                    .SubItems.Add(dr("ORno"))
-                    .SubItems.Add(dr("customer_name"))
-                    .SubItems.Add(dr("prod_name"))
-                    .SubItems.Add(dr("prod_price"))
-                    .SubItems.Add(dr("prod_qty"))
-                    .SubItems.Add(dr("prod_subtotal"))
-                    .SubItems.Add(dr("date_order"))
-                End With
-            End While
-        End With
-    End Sub
-
-
+ 
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
@@ -87,12 +66,11 @@
         End While
     End Sub
 
-    Public Sub SearchProduct(ByVal lv As ListView, ByVal search As String)
+    Public Sub SearchProduct(ByVal lv As ListView, ByVal search As String, Optional ByVal orderBy As String = "id")
         Connected()
         Dim result As String = ""
-        Dim cond As String = ""
         Dim key As String = "'%" & search & "%'"
-        sql = " SELECT * FROM tblproducts WHERE prod_name LIKE " & key & " or prod_category LIKE " & key & " order by id"
+        sql = " SELECT * FROM tblproducts WHERE prod_name LIKE " & key & " or prod_category LIKE " & key & " order by " & orderBy & ""
         CommandDB()
         dr = cmd.ExecuteReader()
         lv.Items.Clear()
@@ -105,8 +83,10 @@
                 .SubItems.Add(dr("prod_purchasedate"))
                 .SubItems.Add(dr("prod_passdate"))
             End With
+
         End While
     End Sub
+
 
     Public Function IsProductExist(ByVal tbl As String, ByVal field As String, ByVal str As String) As Boolean
         Connected()
@@ -119,4 +99,5 @@
             Return False
         End If
     End Function
+
 End Module
