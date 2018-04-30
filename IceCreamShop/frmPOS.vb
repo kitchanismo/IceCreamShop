@@ -119,6 +119,7 @@ Public Class frmPOS
             Exit Sub
         End If
 
+
         'update new subtotal
         newsubtotal = enterOrder * prodprice
 
@@ -235,6 +236,10 @@ Public Class frmPOS
             Return getProductStock(_prodname)
         End If
     End Function
+
+
+
+
 
     Sub updateQtyListOrder(ByVal _qty As Integer, ByVal _subTotal As Double)
         'instantiate
